@@ -1,19 +1,26 @@
+import { Page,  HomeContainer, Header, Logo, NavBar, LinkListing, NavLink, CurriculumDownloadButton,
+  MyPhoto, Name, Circle, BottomContainer, FollowContainer, Follow, LinksContainer, IconBackground,
+  ScrollDownContainer, ScrollDown,Background, GridItem, Elipse, ElementBackground, ElementBackgroundLast,
+  Test } from './style';
 import React,{ useState, useEffect } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Page,  HomeContainer, Header, Logo, NavBar, LinkListing, NavLink, CurriculumDownloadButton,
-  MyPhoto, Name, Circle, BottomContainer, FollowContainer, Follow, LinksContainer, IconBackground,
-  ScrollDownContainer, ScrollDown,Background, GridItem, Test } from './style';
 
+//images
 import myPhoto from '../../assets/image/my-photo.png';
 import marconeLogo from '../../assets/image/logo.svg';
 
+//icons
 import gitubLogo from '../../assets/icons/github.svg';
 import linkedinLogo from '../../assets/icons/linkedin.svg';
 import behanceLogo from '../../assets/icons/behance.svg';
 import arrowDown from '../../assets/icons/arrow-down.svg';
+
+//elements
+import bar from '../../assets/icons/bar.svg';
+import plus from '../../assets/icons/plus.svg'
 const Home = () => {
 
   return (
@@ -31,7 +38,7 @@ const Home = () => {
           </NavBar>
           <CurriculumDownloadButton> Download CV </CurriculumDownloadButton>
         </Header>
-        <MyPhoto src={myPhoto} width={914} height={977} alt='marcone photo' draggable={false}></MyPhoto>
+        <MyPhoto src={myPhoto} width={1080} height={1142} alt='marcone photo' draggable={false}></MyPhoto>
         <Name>MARCONE</Name>
         <Circle></Circle>
         <BottomContainer>
@@ -63,11 +70,19 @@ const Home = () => {
           </ScrollDownContainer>
         </BottomContainer>
         <Background>
+          <GridItem>
+            <Elipse></Elipse>
+          </GridItem>
+          <GridItem>
+            <ElementBackground src={bar} width={8} height={14} alt='background element bar' draggable={false}/>
+            <ElementBackground src={plus} width={20} height={20} alt='background element plus' draggable={false}/>
+          </GridItem>
           <GridItem/>
           <GridItem/>
-          <GridItem/>
-          <GridItem/>
-          <GridItem/>
+          <GridItem>
+            <ElementBackgroundLast src={bar} width={8} height={14} alt='background element bar' draggable={false}/>
+            <ElementBackgroundLast src={plus} width={20} height={20} alt='background element plus' draggable={false} />
+          </GridItem>
           <GridItem/>
         </Background>
       </HomeContainer>

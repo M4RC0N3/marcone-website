@@ -5,13 +5,12 @@ export const Page = styled.main`
     width: 100vw;
     height: auto;
     overflow-x: hidden;
-    background-color: #201143;
+    background-color: #170c32;
 `;
 
 export const HomeContainer = styled.section`
     width: 100vw;
     height: 100vh;
-    background: rgb(102,42,245);
     background: radial-gradient(circle, rgba(102,42,245,1) 0%, rgba(32,17,67,0) 100%);
     display: flex;
     justify-content: center;
@@ -69,7 +68,7 @@ export const NavLink = styled.a`
         background-color: #fff;
         top: 50%;
         transform: translateY(-50%);
-        transition: width .35s cubic-bezier( 0.64, 0.13, 0.21, 0.66 );
+        transition: width .45s cubic-bezier( 0.79, 0.33, 0, 0.93 );
     }
     &:hover{
         &::after{
@@ -167,7 +166,7 @@ export const IconBackground = styled.div`
     border-radius: 100%;
     transition: .4s ease-in-out;
     &:hover{
-        background-color: #662AF5;
+        background-color: #776fff;
     }
 `;
 const downAnimation = keyframes`
@@ -211,15 +210,54 @@ export const Background = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     padding: 10px;
+    opacity: .11;
 `;
 
 export const GridItem = styled.div`
     width: 100%;
     height: 100%;
     border-left: 1px solid #fff;
-    opacity: .11;
+    position: relative;
     &:first-child{
         border-left: none;
+    }
+`;
+
+export const Elipse = styled.div`
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: 100px solid #fff;
+    opacity: .4;
+    position: absolute;
+    left: -168px;
+    top: -228px;
+`;
+
+export const ElementBackground = styled(Image)`
+    position: absolute;
+    &:nth-child(1){
+        left: -3.8px;
+        top: 172px;
+    }
+
+    &:nth-child(2){
+        right: -9.25px;
+        rotate: 45deg;
+        top: 76px;
+    }
+`;
+export const ElementBackgroundLast = styled(Image)`
+    position: absolute;
+    &:nth-child(1){
+        left: -3.8px;
+        bottom: 295px;
+    }
+
+    &:nth-child(2){
+        right: -9.25px;
+        rotate: 45deg;
+        bottom: 167px;
     }
 `;
 
