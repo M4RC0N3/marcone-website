@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
+
 export const Page = styled.main`
     width: 100vw;
     height: auto;
     overflow-x: hidden;
     background-color: #201143;
-`
+`;
 
 export const HomeContainer = styled.section`
     width: 100vw;
@@ -26,16 +27,16 @@ export const Header = styled.header`
     top: 0;
     z-index: 15;
     box-sizing: border-box;
-    padding: 15px 120px;
+    padding: 15px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-`
+`;
 
 export const Logo = styled(Image)`
     width: auto;
     height: 30px;
-`
+`;
 
 export const NavBar = styled.nav`
     max-width: 610px;
@@ -45,14 +46,15 @@ export const NavBar = styled.nav`
     justify-content: center;
     margin: 0 100px;
     z-index: 5;
-`
+`;
 
 export const LinkListing = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-`
-export const Link = styled.a`
+`;
+
+export const NavLink = styled.a`
     font-family: 'raleway-medium';
     font-size: 1.2rem;
     text-decoration: none;
@@ -76,6 +78,7 @@ export const Link = styled.a`
     }
 `;
 
+
 export const CurriculumDownloadButton = styled.button`
     min-width: 132px;
     background: transparent;
@@ -92,7 +95,8 @@ export const CurriculumDownloadButton = styled.button`
         background-color: #fff;
         color: #000;
     }
-`
+`;
+
 export const MyPhoto = styled(Image)`
     position: absolute;
     bottom: -9%;
@@ -101,14 +105,16 @@ export const MyPhoto = styled(Image)`
     z-index: 10;
     width: auto;
     height: 108%;
-`
+`;
+
 export const Name = styled.h1`
     position: absolute;
     font-family: 'raleway-extrabold', sans-serif;
     color: #fff;
     font-size: 32.5vh;
     z-index: 6;
-`
+`;
+
 export const Circle = styled.div`
     width: 75vh;
     height: 75vh;
@@ -116,15 +122,86 @@ export const Circle = styled.div`
     background: radial-gradient(circle, #633BC1, #662AF5);
     box-shadow: 0 0 30px rgba(102, 42, 245, .55);
     z-index: 5;
-`
+`;
+
+export const BottomContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    box-sizing: border-box;
+    padding: 0 100px 40px;
+
+`;
 
 export const FollowContainer = styled.div`
-    position: absolute;
-    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const Follow = styled.p`
+    font-family: 'raleway-medium', sans-serif;
+    writing-mode: vertical-lr;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+`;
+
+export const LinksContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+`;
+
+export const IconBackground = styled.div`
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: .4s ease-in-out;
+    &:hover{
+        background-color: #662AF5;
+    }
+`;
+const downAnimation = keyframes`
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(30px);
+    }
 `
-export const Follow = styled.div`
-    
-`
+export const ScrollDownContainer = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    opacity: .5;
+    animation: ${downAnimation} 1s cubic-bezier( 0.79, 0.33, 0, 0.93 ) infinite alternate;
+    transition: .6s cubic-bezier( 0.79, 0.33, 0, 0.93 );
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+    }
+`;
+
+
+
+export const ScrollDown = styled.p`
+    font-family: 'raleway-medium', sans-serif;
+    writing-mode: vertical-lr;
+    color: #fff;
+    margin-bottom: 15px;
+`;
+
 export const Background = styled.div`
     width: 100%;
     height: 100%;
@@ -134,7 +211,7 @@ export const Background = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     padding: 10px;
-`
+`;
 
 export const GridItem = styled.div`
     width: 100%;
@@ -144,9 +221,9 @@ export const GridItem = styled.div`
     &:first-child{
         border-left: none;
     }
-`
+`;
 
 export const Test = styled.section`
     width: 100vw;
     height: 100vh;
-`
+`;
