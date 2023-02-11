@@ -9,18 +9,18 @@ import Link from 'next/link';
 
 
 //images
-import myPhoto from '../../assets/image/my-photo.png';
-import marconeLogo from '../../assets/image/logo.svg';
+import myPhoto from 'src/assets/image/my-photo.png';
+import marconeLogo from 'src/assets/image/logo.svg';
 
 //icons
-import gitubLogo from '../../assets/icons/github.svg';
-import linkedinLogo from '../../assets/icons/linkedin.svg';
-import behanceLogo from '../../assets/icons/behance.svg';
-import arrowDown from '../../assets/icons/arrow-down.svg';
+import gitubLogo from 'src/assets/icons/github.svg';
+import linkedinLogo from 'src/assets/icons/linkedin.svg';
+import behanceLogo from 'src/assets/icons/behance.svg';
+import arrowDown from 'src/assets/icons/arrow-down.svg';
 
 //elements
-import bar from '../../assets/icons/bar.svg';
-import plus from '../../assets/icons/plus.svg'
+import bar from 'src/assets/icons/bar.svg';
+import plus from 'src/assets/icons/plus.svg'
 const Home = () => {
 
   return (
