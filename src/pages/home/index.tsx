@@ -38,7 +38,7 @@ const Home = () => {
           </NavBar>
           <CurriculumDownloadButton> Download CV </CurriculumDownloadButton>
         </Header>
-        <MyPhoto src={myPhoto} width={1080} height={1142} alt='marcone photo' draggable={false}></MyPhoto>
+        <MyPhoto src={myPhoto} width={1080} height={1142} alt='marcone photo' draggable={false} priority/>
         <Name>MARCONE</Name>
         <Circle></Circle>
         <BottomContainer>
