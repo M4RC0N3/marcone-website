@@ -1,7 +1,7 @@
 import { Page,  HomeContainer, Header, Logo, NavBar, LinkListing, NavLink, CurriculumDownloadButton,
   MyPhoto, Name, Circle, BottomContainer, FollowContainer, Follow, LinksContainer, IconBackground,
   ScrollDownContainer, ScrollDown,Background, GridItem, Elipse, ElementBackground, ElementBackgroundLast,
-  Test } from './style';
+  Crown, LogoFill, RectLogo, CrownBase, Test } from './style';
 import React,{ useState, useEffect } from 'react';
 
 import Image from 'next/image';
@@ -20,7 +20,13 @@ import arrowDown from 'src/assets/icons/arrow-down.svg';
 
 //elements
 import bar from 'src/assets/icons/bar.svg';
-import plus from 'src/assets/icons/plus.svg'
+import plus from 'src/assets/icons/plus.svg';
+
+import crownBase from 'src/assets/image/crown-base.svg';
+import crown from 'src/assets/image/crown.svg';
+import logoFill from 'src/assets/image/logo-fill.svg';
+import rectLogo from 'src/assets/image/rect-logo.svg';
+
 const Home = () => {
 
   return (
@@ -71,17 +77,21 @@ const Home = () => {
         </BottomContainer>
         <Background>
           <GridItem>
-            <Elipse></Elipse>
+            <Elipse/>
           </GridItem>
           <GridItem>
             <ElementBackground src={bar} width={8} height={14} alt='background element bar' draggable={false}/>
             <ElementBackground src={plus} width={20} height={20} alt='background element plus' draggable={false}/>
+            <Crown src={crown} width={97} height={61} alt='marcone logo variation' draggable={false}/>
+            <LogoFill src={logoFill} width={85} height={49} alt='marcone logo variation' draggable={false}/>
           </GridItem>
           <GridItem/>
           <GridItem/>
           <GridItem>
             <ElementBackgroundLast src={bar} width={8} height={14} alt='background element bar' draggable={false}/>
             <ElementBackgroundLast src={plus} width={20} height={20} alt='background element plus' draggable={false} />
+            <RectLogo src={rectLogo} width={190} height={114} alt='marcone logo variation' draggable={false}/>
+            <CrownBase src={crownBase} width={85} height={53} alt='marcone logo variation' draggable={false}/>
           </GridItem>
           <GridItem/>
         </Background>

@@ -1,11 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
-
+const EmergeTime = '1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 )   1.5s forwards';
 export const Page = styled.main`
     width: 100vw;
     height: auto;
     overflow-x: hidden;
-    background-color: #170c32;
+    background-color: #070410;
 `;
 
 export const HomeContainer = styled.section`
@@ -95,7 +95,19 @@ export const CurriculumDownloadButton = styled.button`
         color: #000;
     }
 `;
+const MyPhotoAnimation = keyframes`
+    from{
+        opacity: 0;
+        filter: blur(10px);
+        scale: 1.06;
+    }
+    to{
+        opacity: 1;
+        filter: blur(0);
+        scale: 1;
+    }
 
+`
 export const MyPhoto = styled(Image)`
     position: absolute;
     bottom: -9%;
@@ -104,7 +116,24 @@ export const MyPhoto = styled(Image)`
     z-index: 10;
     width: auto;
     height: 108%;
+    opacity: 0;
+    filter: blur(10px);
+    scale: 1.1;
+    animation: ${MyPhotoAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) 1s forwards;
 `;
+
+const NameAnimation = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(3%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+
+    }
+
+`
 
 export const Name = styled.h1`
     position: absolute;
@@ -112,7 +141,23 @@ export const Name = styled.h1`
     color: #fff;
     font-size: 32.5vh;
     z-index: 6;
+    opacity: 0;
+    transform: translateY(1%);
+    animation: ${NameAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) .5s forwards;
 `;
+
+const CircleAnimation = keyframes`
+    from{
+        opacity: 0;
+        scale: .8;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+
+    }
+
+`
 
 export const Circle = styled.div`
     width: 75vh;
@@ -121,6 +166,9 @@ export const Circle = styled.div`
     background: radial-gradient(circle, #633BC1, #662AF5);
     box-shadow: 0 0 30px rgba(102, 42, 245, .55);
     z-index: 5;
+    opacity: 0;
+    scale: .9;
+    animation: ${CircleAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) 1.5s forwards;
 `;
 
 export const BottomContainer = styled.div`
@@ -222,44 +270,190 @@ export const GridItem = styled.div`
         border-left: none;
     }
 `;
+const ElipseAnimation = keyframes`
+    from{
+        opacity: 0;
+        scale: .7;
+    }
+
+    to{
+        opacity: .4;
+        scale: 1;
+    }
+`
 
 export const Elipse = styled.div`
     width: 300px;
     height: 300px;
     border-radius: 100%;
     border: 100px solid #fff;
-    opacity: .4;
     position: absolute;
+    opacity: 0;
+    scale: .7;
     left: -168px;
     top: -228px;
+    animation: ${ElipseAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) 1.5s forwards;
 `;
+
+const ElementBackgroundAnimation = keyframes`
+    from{
+        
+        top: 20%;
+    }
+
+    to{
+        top: 80%;
+    }
+`
+const ElementBackgroundRotation = keyframes`
+    from{
+        rotate: 45deg;
+    }
+    to{
+        rotate: 315deg;
+    }
+`
 
 export const ElementBackground = styled(Image)`
     position: absolute;
     &:nth-child(1){
-        left: -3.8px;
-        top: 172px;
+        left: -3.9px;
+        animation: ${ElementBackgroundAnimation} 2s cubic-bezier( 0.55, 0.05, 0.4, 0.98 ) 3s alternate infinite ;
     }
 
     &:nth-child(2){
         right: -9.25px;
         rotate: 45deg;
         top: 76px;
+        animation: ${ElementBackgroundRotation} 1.5s cubic-bezier( 0.55, 0.05, 0.4, 0.98 ) 3s alternate infinite;
     }
 `;
+
+const ElementBackgroundLastAnimation = keyframes`
+    from{
+        
+        bottom: 29%;
+    }
+
+    to{
+        bottom: 88%;
+    }
+`
+
+const ElementBackgroundLastRotation = keyframes`
+    from{
+        rotate: 45deg;
+    }
+    to{
+        rotate: 315deg;
+    }
+`
 export const ElementBackgroundLast = styled(Image)`
     position: absolute;
     &:nth-child(1){
-        left: -3.8px;
-        bottom: 295px;
+        left: -4px;
+        animation: ${ElementBackgroundLastAnimation} 2.5s cubic-bezier( 0.55, 0.05, 0.4, 0.98 ) 3s alternate infinite ;
     }
 
     &:nth-child(2){
         right: -9.25px;
-        rotate: 45deg;
         bottom: 167px;
+        animation: ${ElementBackgroundLastRotation} 1.5s cubic-bezier( 0.55, 0.05, 0.4, 0.98 ) 3s alternate infinite;
     }
 `;
+
+
+const EmergeCrown = keyframes`
+    from{
+        opacity: 0;
+        bottom: 26%;
+        left: 86%;
+    }
+    to{
+        bottom: 15%;
+        left: 5%;
+        opacity: 1;
+    }
+`;
+
+export const Crown = styled(Image)`
+    width: auto;
+    height: auto;
+    position: absolute;
+    opacity: 0;
+    bottom: 26%;
+    left: 86%;
+    height: 100px;
+    animation: ${EmergeCrown} ${EmergeTime};
+`;
+
+const EmergeLogoFill = keyframes`
+    from{
+        opacity: 0;
+        right: -19%;
+        top: 23%;
+    }
+    to{
+        right: 10%;
+        top: 11%;
+        opacity: 1;
+    }
+`;
+
+export const LogoFill = styled(Image)`
+    position: absolute;
+    opacity: 0;
+    right: -19%;
+    top: 23%;
+    height: 88px;
+    width: auto;
+    animation: ${EmergeLogoFill} ${EmergeTime};
+`
+
+const EmergeRectLogo = keyframes`
+    from{
+        top: 21%;
+        left: -45%;
+        opacity: 0;
+    }
+    to{
+        top: 10%;
+        left: 17%;
+        opacity: 1;
+    }
+`
+
+export const RectLogo = styled(Image)`
+    position: absolute;
+    height: 108px;
+    width: auto;
+    top: 21%;
+    left: -45%;
+    opacity: 0;
+    animation: ${EmergeRectLogo} ${EmergeTime};
+`
+const EmergeCrownBase = keyframes`
+    from{
+        bottom: 23%;
+        left: -21%;
+        opacity: 0;
+    }
+    to{
+        bottom: 10%;
+        left: 21%;
+        opacity: 1;
+    }
+`
+
+export const CrownBase = styled(Image)`
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: 23%;
+    left: -21%;
+    opacity: 0;
+    animation: ${EmergeCrownBase} ${EmergeTime};
+`
 
 export const Test = styled.section`
     width: 100vw;
