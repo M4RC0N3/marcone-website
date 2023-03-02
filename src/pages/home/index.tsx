@@ -1,12 +1,12 @@
+import React,{ useContext } from 'react';
+
 import { Page,  HomeContainer, Header, Logo, NavBar, LinkListing, NavLink, CurriculumDownloadButton,
   MyPhoto, Name, Circle, BottomContainer, FollowContainer, Follow, LinksContainer, IconBackground,
   ScrollDownContainer, ScrollDown,Background, GridItem, Elipse, ElementBackground, ElementBackgroundLast,
   Crown, LogoFill, RectLogo, CrownBase, Test } from './style';
-import React,{ useState, useEffect } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
-
 
 //images
 import myPhoto from 'src/assets/image/my-photo.png';
@@ -96,7 +96,6 @@ const Home = () => {
           <GridItem/>
         </Background>
       </HomeContainer>
-      {<Test></Test>}
     </Page>
   );
 }

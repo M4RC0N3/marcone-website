@@ -1,10 +1,9 @@
-import Home from './home/index'
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import { createContext } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+import Home from './home/index';
+import About from './home/about/index';
+import Head from 'next/head';
+
 export default function Test() {
   return (
     <>
@@ -14,7 +13,11 @@ export default function Test() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Home/>
+      <About/>
+
     </>
   )
 }
+

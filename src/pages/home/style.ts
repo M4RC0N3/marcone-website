@@ -11,6 +11,7 @@ export const Page = styled.main`
 export const HomeContainer = styled.section`
     width: 100vw;
     height: 100vh;
+    min-height: 600px;
     background: radial-gradient(circle, rgba(102,42,245,1) 0%, rgba(32,17,67,0) 100%);
     display: flex;
     justify-content: center;
