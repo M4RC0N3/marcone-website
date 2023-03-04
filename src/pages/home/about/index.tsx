@@ -1,5 +1,4 @@
-import React,{ useContext, useEffect } from 'react';
-import Image from 'next/image';
+import React from 'react';
 
 import { Section, TextSide, PhotoSide, Title, Content, Photo, Flag, LogoVariation, Logo } from './style';
 

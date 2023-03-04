@@ -1,9 +1,9 @@
-import React,{ useContext } from 'react';
+import React from 'react';
 
 import { Page,  HomeContainer, Header, Logo, NavBar, LinkListing, NavLink, CurriculumDownloadButton,
   MyPhoto, Name, Circle, BottomContainer, FollowContainer, Follow, LinksContainer, IconBackground,
   ScrollDownContainer, ScrollDown,Background, GridItem, Elipse, ElementBackground, ElementBackgroundLast,
-  Crown, LogoFill, RectLogo, CrownBase, Test } from './style';
+  Crown, LogoFill, RectLogo, CrownBase } from './style';
 
 import Image from 'next/image';
 import Link from 'next/link';
