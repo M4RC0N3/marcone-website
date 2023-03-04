@@ -1,14 +1,9 @@
 import styled from "styled-components";
 import Image from 'next/image';
 
-type ProtoType = {
-    logoType: string;
-};
-
-export const Page = styled.section`
+export const Section = styled.section`
     width: 100vw;
     min-height: 1059px;
-    overflow: hidden;
     background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;

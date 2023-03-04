@@ -1,7 +1,7 @@
 import React,{ useContext, useEffect } from 'react';
 import Image from 'next/image';
 
-import { Page, TextSide, PhotoSide, Title, Content, Photo, Flag, LogoVariation, Logo } from './style';
+import { Section, TextSide, PhotoSide, Title, Content, Photo, Flag, LogoVariation, Logo } from './style';
 
 import myPhoto from 'src/assets/image/my-photo-black.png';
 import marconeLogo from 'src/assets/image/logo.svg'
@@ -11,7 +11,7 @@ import crownBaseLogo from 'src/assets/image/crown-base-black.svg';
 const About = () =>{
 
     return(
-        <Page>
+        <Section>
             <TextSide>
                 <Title>About</Title>
                 <Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non orci ornare, auctor mauris quis, ultricies lacus. Vestibulum rutrum sed turpis id mollis. Nulla pulvinar elit eu sollicitudin eleifend. Morbi pulvinar fringilla ipsum, et rhoncus velit. Donec laoreet sem suscipit felis ullamcorper, id ultrices nisi facilisis. Integer id egestas enim. Curabitur mi elit, iaculis eget nunc vel, feugiat varius risus. Integer hendrerit ultrices congue.</Content>
@@ -26,7 +26,7 @@ const About = () =>{
                     <Logo src={marconeLogo} width={650.21} height={398.78}alt='marcone logo' draggable={false}/>
                 </Flag>
             </PhotoSide>
-        </Page>
+        </Section>
     );
 }
 

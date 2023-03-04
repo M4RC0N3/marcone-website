@@ -2,6 +2,7 @@ import { createContext } from 'react';
 
 import Home from './home/index';
 import About from './home/about/index';
+import Tolls from './home/tools/index';
 import Head from 'next/head';
 
 export default function Test() {
@@ -16,7 +17,7 @@ export default function Test() {
 
       <Home/>
       <About/>
-
+      <Tolls/>
     </>
   )
 }
