@@ -4,6 +4,7 @@ import Home from './home/index';
 import About from './home/about/index';
 import Tolls from './home/tools/index';
 import Projects from './home/projects/indext';
+import Contact from './home/contact/index';
 
 import Head from 'next/head';
 
@@ -21,6 +22,7 @@ export default function Test() {
       <About/>
       <Tolls/>
       <Projects/>
+      <Contact/>
     </>
   )
 }
