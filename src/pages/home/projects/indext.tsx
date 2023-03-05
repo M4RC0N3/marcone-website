@@ -17,8 +17,11 @@ import react from 'src/assets/icons/react.svg';
 import sass from 'src/assets/icons/sass.svg';
 import typescript from 'src/assets/icons/typescript.svg'; 
 
+//banners
 import corujaBanner from 'src/assets/image/coruja-banner.png';
-import paymentScreenBanner from 'src/assets/image/payment-screen.png'
+import paymentScreenBanner from 'src/assets/image/payment-screen.png';
+import vigasBanner from 'src/assets/image/vigas-banner.png';
+import digipeksBanner from 'src/assets/image/digipeks-banner.png';
 const Projects = () => {
   return (
     <Section>
@@ -84,6 +87,68 @@ const Projects = () => {
                     </Stack>
                     <Stack style={{backgroundColor: '#007ACC'}}>
                         <Image src={typescript} width={43} height={28} alt='javascript icon' draggable={false}></Image>
+                    </Stack>
+                </StackContainer>
+            </ProjectPreview>
+        </ProjectContainer>
+        <ProjectContainer>
+            <ProjectActionContainer>
+                <ProjectAbout>
+                    <ProjectType>Web Design</ProjectType>
+                    <ProjectTitle>Vigas imóveis</ProjectTitle>
+                    <ProjectDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ProjectDescription>
+                </ProjectAbout>
+                <Link href={`https://www.behance.net/gallery/161792265/Vigas-landing-page`} target='_blank' style={{textDecoration: 'none'}}>
+                    <Button>
+                        <NameButton>View project</NameButton>
+                        <Arrow src={arrow} width={81} height={9} alt='view project' draggable={false}></Arrow>
+                    </Button>
+                </Link>
+            </ProjectActionContainer>
+            <ProjectPreview>
+                <ImageContainer>
+                    <Image src={vigasBanner} width={683} height={370} style={{width: '100%', height: 'auto'}} alt='landing page coruja banner' draggable={false}></Image>
+                </ImageContainer>
+                <StackContainer>
+                    <Stack style={{backgroundColor: '#FF9100'}}>
+                        <Image src={illustrator} width={32} height={31} alt='illustrator icon' draggable={false}></Image>
+                    </Stack>
+                    <Stack style={{backgroundColor: '#FF61F6'}}>
+                        <Image src={adobexd} width={41} height={31} alt='adobe xd icon' draggable={false}></Image>
+                    </Stack>
+                    <Stack style={{backgroundColor: '#0099FF'}}>
+                        <Image src={photoshop} width={35} height={31} alt='photoshop icon' draggable={false}></Image>
+                    </Stack>
+                </StackContainer>
+            </ProjectPreview>
+        </ProjectContainer>
+        <ProjectContainer>
+            <ProjectActionContainer>
+                <ProjectAbout>
+                    <ProjectType>Landing Page</ProjectType>
+                    <ProjectTitle>Digipeks army</ProjectTitle>
+                    <ProjectDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ProjectDescription>
+                </ProjectAbout>
+                <Link href={`https://m4rc0n3.github.io/digipeks-army/`} target='_blank' style={{textDecoration: 'none'}}>
+                    <Button>
+                        <NameButton>View project</NameButton>
+                        <Arrow src={arrow} width={81} height={9} alt='view project' draggable={false}></Arrow>
+                    </Button>
+                </Link>
+            </ProjectActionContainer>
+            <ProjectPreview>
+                <ImageContainer>
+                    <Image src={digipeksBanner} width={683} height={370} style={{width: '100%', height: 'auto'}} alt='landing page coruja banner' draggable={false}></Image>
+                </ImageContainer>
+                <StackContainer>
+                    <Stack style={{backgroundColor: '#0093FF'}}>
+                        <Image src={react} width={56} height={49} alt='react icon' draggable={false}></Image>
+                    </Stack>
+                    <Stack style={{backgroundColor: '#FF519C'}}>
+                        <Image src={sass} width={53} height={40} alt='sass icon' draggable={false}></Image>
+                    </Stack>
+                    <Stack style={{backgroundColor: '#FFE95A'}}>
+                        <Image src={javascript} width={40} height={29} alt='javascript icon' draggable={false}></Image>
                     </Stack>
                 </StackContainer>
             </ProjectPreview>
