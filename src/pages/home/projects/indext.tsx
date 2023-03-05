@@ -24,7 +24,7 @@ import vigasBanner from 'src/assets/image/vigas-banner.png';
 import digipeksBanner from 'src/assets/image/digipeks-banner.png';
 const Projects = () => {
   return (
-    <Section>
+    <Section id='projects'>
         <Top>
             <Title>/My Projects</Title>
             <Subtitle>I have been making it with much love for three years.</Subtitle>

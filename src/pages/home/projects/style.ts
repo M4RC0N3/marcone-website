@@ -53,6 +53,7 @@ export const ProjectDescription = styled.h5`
     max-width: 420px;
     font-size: 1.15rem;
     font-family: 'raleway-regular', sans-serif;
+    line-height: 25px;
 `;
 export const Button = styled.button`
     width: 215px;

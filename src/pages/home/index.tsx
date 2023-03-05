@@ -31,15 +31,15 @@ const Home = () => {
 
   return (
     <Page>
-      <HomeContainer>
+      <HomeContainer id='home'>
         <Header>
           <Logo src={marconeLogo} width={59.22} height={34.78}alt='marcone logo' draggable={false}></Logo>
           <NavBar>
             <LinkListing>
-              <li><NavLink href="home">Home</NavLink></li>
-              <li><NavLink href="about">About</NavLink></li>
-              <li><NavLink href="contact">Contact</NavLink></li>
-              <li><NavLink href="projects">Projects</NavLink></li>
+              <li><NavLink href="#home">Home</NavLink></li>
+              <li><NavLink href="#about">About</NavLink></li>
+              <li><NavLink href="#projects">Projects</NavLink></li>
+              <li><NavLink href="#contact">Contact</NavLink></li>
             </LinkListing>
           </NavBar>
           <CurriculumDownloadButton> Download CV </CurriculumDownloadButton>

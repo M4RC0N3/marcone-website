@@ -10,7 +10,7 @@ import crownBaseLogo from 'src/assets/image/crown-base-black.svg';
 const About = () =>{
 
     return(
-        <Section>
+        <Section id='about'>
             <TextSide>
                 <Title>About</Title>
                 <Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non orci ornare, auctor mauris quis, ultricies lacus. Vestibulum rutrum sed turpis id mollis. Nulla pulvinar elit eu sollicitudin eleifend. Morbi pulvinar fringilla ipsum, et rhoncus velit. Donec laoreet sem suscipit felis ullamcorper, id ultrices nisi facilisis. Integer id egestas enim. Curabitur mi elit, iaculis eget nunc vel, feugiat varius risus. Integer hendrerit ultrices congue.</Content>
