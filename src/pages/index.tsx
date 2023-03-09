@@ -1,6 +1,6 @@
 
 //Sections
-import Home from './home/index';
+import Home from './home/landing/index';
 import About from './home/about/index';
 import Tolls from './home/tools/index';
 import Projects from './home/projects/indext';
