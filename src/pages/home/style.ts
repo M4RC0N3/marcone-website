@@ -212,7 +212,6 @@ export const IconBackground = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 100%;
     transition: .4s ease-in-out;
     &:hover{
         background-color: #776fff;
