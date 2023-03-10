@@ -2,12 +2,15 @@ import styled from 'styled-components';
 import Image from 'next/image';
 export const Section = styled.section`
     width: 100vw;
-    min-height: 1059px;
     background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 130px 100px 0px;
+    padding: 130px 100px 70px;
     box-sizing: border-box;
+    @media (max-width: 710px) {
+        grid-template-columns: 1fr;
+        padding: 130px 40px 50px;
+    }
 `;
 
 export const FormContainer = styled.div``;
@@ -96,6 +99,9 @@ export const SendIcon = styled(Image)`
 export const InfoContactContainer = styled.div`
     display: flex;
     justify-content: end;
+    @media (max-width: 710px) {
+        justify-content: start;
+    }
 `;
 export const InfoContact = styled.div`
     height: 160px;
@@ -103,6 +109,9 @@ export const InfoContact = styled.div`
     flex-direction: column;
     align-items: end;
     justify-content: space-between;
+    @media (max-width: 710px) {
+        align-items: flex-start;
+    }
 `;
 export const CityName = styled.h5`
     font-family: 'quicksand-regular', sans-serif;

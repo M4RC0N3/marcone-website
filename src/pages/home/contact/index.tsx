@@ -16,7 +16,7 @@ import sendIcon from 'src/assets/icons/send.svg';
 const Contact = () =>{
 
     return(
-        <Section>
+        <Section id='contact'>
             <FormContainer>
                 <Header>
                     <Title>Let's talk</Title>
