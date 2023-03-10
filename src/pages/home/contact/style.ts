@@ -9,7 +9,7 @@ export const Section = styled.section`
     box-sizing: border-box;
     @media (max-width: 710px) {
         grid-template-columns: 1fr;
-        padding: 130px 40px 50px;
+        padding: 80px 40px 50px;
     }
 `;
 
@@ -111,6 +111,7 @@ export const InfoContact = styled.div`
     justify-content: space-between;
     @media (max-width: 710px) {
         align-items: flex-start;
+        margin-top: 60px;
     }
 `;
 export const CityName = styled.h5`

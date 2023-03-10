@@ -18,7 +18,7 @@ const About = () =>{
                         <Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non orci ornare, auctor mauris quis, ultricies lacus. Vestibulum rutrum sed turpis id mollis. Nulla pulvinar elit eu sollicitudin eleifend. Morbi pulvinar fringilla ipsum, et rhoncus velit.</Content>
                     </Text>
                     <ImageContainer>
-                        <Image src={brushs} width={544} height={544} alt='github logo' draggable={false}></Image>
+                        <Image src={brushs} width={833} height={833} alt='github logo' draggable={false}></Image>
                     </ImageContainer>
                 </AboutDesignWorkContainer>
                 <ToolsContainer id='design'>
