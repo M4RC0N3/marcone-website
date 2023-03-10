@@ -114,11 +114,13 @@ export const Text = styled.div`
         margin: 0;
         box-sizing: border-box;
         padding: 20px;
+        text-align: justify;
     }
 `;
 
 export const ImageContainer = styled.div`
     width: 215px;
+    min-width: 215px;
     height: 544px;
     display: flex;
     justify-content: center;
@@ -142,7 +144,6 @@ export const Title = styled.h3`
 export const Content = styled.p`
     margin-top: 8px;
     font-family: 'raleway-medium', sans-serif;
-    text-align: justify;
 `;
 
 export const ToolsContainer = styled.div`
