@@ -17,7 +17,7 @@ const About = () =>{
             </TextSide>
             <PhotoSide>
                 <LogoVariation id='prisma' src={prismaLogo} width={78.65} height={50.3} alt='prisma logo variaton' draggable={false}/>
-                <LogoVariation id='crown' src={crownLogo} width={97.68} height={61.22} alt='crown logo variaton' draggable={false}/>
+                <LogoVariation id='crown' src={crownLogo} width={54.68} height={61.22} alt='crown logo variaton' draggable={false}/>
                 <LogoVariation id='crown-base' src={crownBaseLogo} width={85.77} height={53.95} alt='crown base logo variaton' draggable={false}/>
                 
                 <Photo src={myPhoto} width={1061} height={1239} alt='minha logo' draggable={false}/>
