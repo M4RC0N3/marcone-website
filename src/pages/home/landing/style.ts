@@ -31,6 +31,9 @@ export const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1024px){
+        padding: 20px 30px;
+    }
 `;
 
 export const Logo = styled(Image)`
@@ -46,6 +49,9 @@ export const NavBar = styled.nav`
     justify-content: center;
     margin: 0 100px;
     z-index: 5;
+    @media (max-width: 765px){
+        display: none;
+    }
 `;
 
 export const LinkListing = styled.ul`
@@ -78,7 +84,6 @@ export const NavLink = styled.a`
     }
 `;
 
-
 export const CurriculumDownloadButton = styled.button`
     min-width: 132px;
     background: transparent;
@@ -95,7 +100,11 @@ export const CurriculumDownloadButton = styled.button`
         background-color: #fff;
         color: #000;
     }
+    @media (max-width: 765px){
+        display: none;
+    }
 `;
+
 const MyPhotoAnimation = keyframes`
     from{
         opacity: 0;
@@ -108,7 +117,8 @@ const MyPhotoAnimation = keyframes`
         scale: 1;
     }
 
-`
+`;
+
 export const MyPhoto = styled(Image)`
     position: absolute;
     bottom: -9%;
@@ -121,6 +131,33 @@ export const MyPhoto = styled(Image)`
     filter: blur(10px);
     scale: 1.1;
     animation: ${MyPhotoAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) 1s forwards;
+
+    @media (max-width: 1024px){
+        width: 130%;
+        height: auto;
+        max-width: 830px;
+    }
+    @media (max-width: 680px){
+        width: 140%;
+        left: 282px;
+        min-width: 770px;
+    }
+    @media (max-width: 540px){
+        left: 215px;
+    }
+    @media (max-width: 440px){
+        min-width: 654px;
+        left: 197px;
+        bottom: -56px;
+    }
+    @media (max-width: 385px){
+        min-width: 604px;
+        left: 139px;
+    }
+    @media (max-width: 310px){
+        min-width: 543px;
+        left: 120px;
+    }
 `;
 
 const NameAnimation = keyframes`
@@ -134,7 +171,7 @@ const NameAnimation = keyframes`
 
     }
 
-`
+`;
 
 export const Name = styled.h1`
     position: absolute;
@@ -145,6 +182,24 @@ export const Name = styled.h1`
     opacity: 0;
     transform: translateY(1%);
     animation: ${NameAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) .5s forwards;
+    @media (max-width: 1024px){
+        font-size: 9rem;
+        writing-mode: vertical-rl;
+        left: 0;
+        top: 97px;
+    }
+    @media (max-width: 740px){
+        font-size: 8rem;
+    }
+    @media (max-width: 680px){
+        font-size: 6.8rem;
+    }
+    @media (max-width: 440px){
+        font-size: 7.1rem;
+    }
+    @media (max-width: 310px){
+        font-size: 7.5rem;
+    }
 `;
 
 const CircleAnimation = keyframes`
@@ -158,7 +213,7 @@ const CircleAnimation = keyframes`
 
     }
 
-`
+`;
 
 export const Circle = styled.div`
     width: 75vh;
@@ -170,6 +225,9 @@ export const Circle = styled.div`
     opacity: 0;
     scale: .9;
     animation: ${CircleAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) 1.5s forwards;
+    @media (max-width: 1024px){
+        display: none;
+    }
 `;
 
 export const BottomContainer = styled.div`
@@ -178,10 +236,12 @@ export const BottomContainer = styled.div`
     justify-content: space-between;
     position: absolute;
     bottom: 0;
-    z-index: 5;
+    z-index: 15;
     box-sizing: border-box;
     padding: 0 100px 40px;
-
+    @media (max-width: 1024px){
+        justify-content: center;
+    }
 `;
 
 export const FollowContainer = styled.div`
@@ -197,6 +257,9 @@ export const Follow = styled.p`
     color: #fff;
     font-size: 1.1rem;
     margin-bottom: 25px;
+    @media (max-width: 1024px){
+        display: none;
+    }
 `;
 
 export const LinksContainer = styled.div`
@@ -204,6 +267,9 @@ export const LinksContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 120px;
+    @media (max-width: 1024px){
+        display: none;
+    }
 `;
 
 export const IconBackground = styled.div`
@@ -217,6 +283,7 @@ export const IconBackground = styled.div`
         background-color: #776fff;
     }
 `;
+
 const downAnimation = keyframes`
     from{
         transform: translateY(0);
@@ -224,7 +291,8 @@ const downAnimation = keyframes`
     to{
         transform: translateY(30px);
     }
-`
+`;
+
 export const ScrollDownContainer = styled.div`
     position: relative;
     display: flex;
@@ -239,8 +307,6 @@ export const ScrollDownContainer = styled.div`
         opacity: 1;
     }
 `;
-
-
 
 export const ScrollDown = styled.p`
     font-family: 'raleway-medium', sans-serif;
@@ -269,7 +335,19 @@ export const GridItem = styled.div`
     &:first-child{
         border-left: none;
     }
+    @media (max-width: 1024px) {
+        &:nth-child(2){
+            border-left: none;
+        }
+        &:nth-child(4){
+            border-left: none;
+        }
+        &:nth-child(6){
+            border-left: none;
+        }
+    }
 `;
+
 const ElipseAnimation = keyframes`
     from{
         opacity: 0;
@@ -280,7 +358,7 @@ const ElipseAnimation = keyframes`
         opacity: .4;
         scale: 1;
     }
-`
+`;
 
 export const Elipse = styled.div`
     width: 300px;
@@ -293,6 +371,9 @@ export const Elipse = styled.div`
     left: -168px;
     top: -228px;
     animation: ${ElipseAnimation} 1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 ) 1.5s forwards;
+    @media (max-width: 1024px){
+        display: none;
+    }
 `;
 
 const ElementBackgroundAnimation = keyframes`
@@ -304,7 +385,8 @@ const ElementBackgroundAnimation = keyframes`
     to{
         top: 80%;
     }
-`
+`;
+
 const ElementBackgroundRotation = keyframes`
     from{
         rotate: 45deg;
@@ -312,13 +394,17 @@ const ElementBackgroundRotation = keyframes`
     to{
         rotate: 315deg;
     }
-`
+`;
 
 export const ElementBackground = styled(Image)`
     position: absolute;
     &:nth-child(1){
         left: -3.9px;
         animation: ${ElementBackgroundAnimation} 2s cubic-bezier( 0.55, 0.05, 0.4, 0.98 ) 3s alternate infinite ;
+
+        @media (max-width: 1024px){
+            display: none;
+        }
     }
 
     &:nth-child(2){
@@ -338,7 +424,7 @@ const ElementBackgroundLastAnimation = keyframes`
     to{
         bottom: 88%;
     }
-`
+`;
 
 const ElementBackgroundLastRotation = keyframes`
     from{
@@ -347,18 +433,24 @@ const ElementBackgroundLastRotation = keyframes`
     to{
         rotate: 315deg;
     }
-`
+`;
+
 export const ElementBackgroundLast = styled(Image)`
     position: absolute;
     &:nth-child(1){
         left: -4px;
         animation: ${ElementBackgroundLastAnimation} 2.5s cubic-bezier( 0.55, 0.05, 0.4, 0.98 ) 3s alternate infinite ;
+    
     }
 
     &:nth-child(2){
         right: -9.25px;
         bottom: 167px;
         animation: ${ElementBackgroundLastRotation} 1.5s cubic-bezier( 0.55, 0.05, 0.4, 0.98 ) 3s alternate infinite;
+
+        @media (max-width: 1024px){
+            display: none;
+        }
     }
 `;
 
@@ -385,6 +477,18 @@ export const Crown = styled(Image)`
     left: 86%;
     height: 100px;
     animation: ${EmergeCrown} ${EmergeTime};
+    @media (max-width: 1024px){
+        bottom: 74% !important;
+        left: 108% !important;
+        rotate: 28deg;
+    }
+    @media (max-width: 540px){
+        bottom: 69% !important;
+    }
+    @media (max-width: 385px){
+        bottom: 55% !important;
+        rotate: 40deg;
+    }
 `;
 
 const EmergeLogoFill = keyframes`
@@ -408,7 +512,11 @@ export const LogoFill = styled(Image)`
     height: 88px;
     width: auto;
     animation: ${EmergeLogoFill} ${EmergeTime};
-`
+
+    @media (max-width: 1024px){
+        display: none;
+    }
+`;
 
 const EmergeRectLogo = keyframes`
     from{
@@ -421,7 +529,7 @@ const EmergeRectLogo = keyframes`
         left: 17%;
         opacity: 1;
     }
-`
+`;
 
 export const RectLogo = styled(Image)`
     position: absolute;
@@ -431,7 +539,12 @@ export const RectLogo = styled(Image)`
     left: -45%;
     opacity: 0;
     animation: ${EmergeRectLogo} ${EmergeTime};
-`
+
+    @media (max-width: 1024px){
+        display: none;
+    }
+`;
+
 const EmergeCrownBase = keyframes`
     from{
         bottom: 23%;
@@ -443,7 +556,7 @@ const EmergeCrownBase = keyframes`
         left: 21%;
         opacity: 1;
     }
-`
+`;
 
 export const CrownBase = styled(Image)`
     position: absolute;
@@ -453,9 +566,8 @@ export const CrownBase = styled(Image)`
     left: -21%;
     opacity: 0;
     animation: ${EmergeCrownBase} ${EmergeTime};
-`
 
-export const Test = styled.section`
-    width: 100vw;
-    height: 100vh;
+    @media (max-width: 1024px){
+        display: none;
+    }
 `;
