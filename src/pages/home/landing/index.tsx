@@ -33,6 +33,11 @@ const Home = () => {
   const HandleMenu = (event:React.ChangeEvent<HTMLInputElement>)=>{
     setMenuView(event.target.checked);
   }
+
+  const HandleScrollDown = ()=>{
+    window.scrollTo(0, 900);
+  }
+
   return (
     <Page>
       <HomeContainer>
@@ -90,7 +95,7 @@ const Home = () => {
               </Link>
             </LinksContainer>
           </FollowContainer>
-          <ScrollDownContainer>
+          <ScrollDownContainer onClick={HandleScrollDown}>
             <ScrollDown>Scroll down</ScrollDown>
             <Image src={arrowDown} width={8} height={81} alt='scroll to down' draggable={false}/>
           </ScrollDownContainer>
