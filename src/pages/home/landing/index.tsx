@@ -35,7 +35,7 @@ const Home = () => {
   }
 
   const HandleScrollDown = ()=>{
-    window.scrollTo(0, 900);
+    window.scrollTo(0, 800);
   }
 
   return (

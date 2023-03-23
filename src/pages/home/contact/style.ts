@@ -5,7 +5,7 @@ export const Section = styled.section`
     background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 130px 100px 70px;
+    padding: 130px 100px 180px;
     box-sizing: border-box;
     @media (max-width: 710px) {
         grid-template-columns: 1fr;
