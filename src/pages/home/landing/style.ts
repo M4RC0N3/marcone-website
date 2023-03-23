@@ -1,6 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 const EmergeTime = '1s cubic-bezier( 0.38, 0.54, 0.17, 0.97 )   1.5s forwards';
+interface Props{
+    view: boolean;
+}
 export const Page = styled.main`
     width: 100vw;
     height: auto;
@@ -18,6 +21,9 @@ export const HomeContainer = styled.section`
     align-items: center;
     position: relative;
     overflow: hidden;
+    @media (max-width: 1024px){
+        min-height: 830px;
+    }
 `;
 
 export const Header = styled.header`
@@ -25,7 +31,7 @@ export const Header = styled.header`
     height: auto;
     position: absolute;
     top: 0;
-    z-index: 15;
+    z-index: 35;
     box-sizing: border-box;
     padding: 15px 100px;
     display: flex;
@@ -33,6 +39,51 @@ export const Header = styled.header`
     align-items: center;
     @media (max-width: 1024px){
         padding: 20px 30px;
+    }
+`;
+
+export const MenuContainer = styled.div`
+    display: flex;
+    align-items: center;
+    
+    @media (min-width:765px) {
+        display: none;
+    }
+`;
+export const MenuTrigger = styled.input`
+    opacity: 0;
+    &:checked + label span:nth-child(1){
+        rotate: 45deg;
+    }
+    &:checked + label span:nth-child(2){
+        width: 100%;
+        rotate: -45deg;
+        bottom: 78%;
+    }
+`;
+export const MenuLabel = styled.label`
+    width: 30px;
+    height: auto;
+    min-height: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    cursor: pointer;
+    position: relative;
+`;
+export const MenuItem = styled.span`
+    height: 2px;
+    background-color: #fff;
+    border-radius: 100px;
+    position: absolute;
+    transition: 1s cubic-bezier( 0.79,0.33,0,0.93 );
+    &:nth-child(1){
+        width: 30px;
+    }
+    &:nth-child(2){
+        width: 20px;
+        bottom: 0;
     }
 `;
 
@@ -105,6 +156,39 @@ export const CurriculumDownloadButton = styled.button`
     }
 `;
 
+export const MenuNavBar = styled.div<Props>`
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    position: absolute;
+    z-index: 30;
+    display: none;
+    transition: 1s cubic-bezier( 0.79,0.33,0,0.93 );
+    @media (max-width: 765px){
+        display: flex;
+        opacity: ${(props)=>props.view == true ? '1' : '0'};
+        pointer-events:${(props)=>props.view == true ? 'initial' : 'none'};
+    }
+`;
+
+export const MenuLinkListing = styled.ul`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 210px 0;
+`;
+
+export const MenuNavLink = styled(NavLink)`
+    font-size: 1.7rem;
+`;
+
+export const MenuCurriculumDownloadButton = styled(CurriculumDownloadButton)`
+    display: block;
+`
 const MyPhotoAnimation = keyframes`
     from{
         opacity: 0;
@@ -177,7 +261,7 @@ export const Name = styled.h1`
     position: absolute;
     font-family: 'raleway-extrabold', sans-serif;
     color: #fff;
-    font-size: 32.5vh;
+    font-size: 17vw;
     z-index: 6;
     opacity: 0;
     transform: translateY(1%);

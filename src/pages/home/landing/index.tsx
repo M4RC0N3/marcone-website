@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Page,  HomeContainer, Header, Logo, NavBar, LinkListing, NavLink, CurriculumDownloadButton,
+import { Page,  HomeContainer, Header, MenuContainer, MenuTrigger, MenuLabel, MenuItem, MenuNavBar, MenuLinkListing,
+  MenuNavLink, MenuCurriculumDownloadButton, Logo, NavBar, LinkListing, NavLink, CurriculumDownloadButton,
   MyPhoto, Name, Circle, BottomContainer, FollowContainer, Follow, LinksContainer, IconBackground,
   ScrollDownContainer, ScrollDown,Background, GridItem, Elipse, ElementBackground, ElementBackgroundLast,
   Crown, LogoFill, RectLogo, CrownBase } from './style';
@@ -28,10 +29,22 @@ import logoFill from 'src/assets/image/logo-fill.svg';
 import rectLogo from 'src/assets/image/rect-logo.svg';
 
 const Home = () => {
-
+  const [menuView, setMenuView] = useState(false);
+  const HandleMenu = (event:React.ChangeEvent<HTMLInputElement>)=>{
+    setMenuView(event.target.checked);
+  }
   return (
     <Page>
-      <HomeContainer id='home'>
+      <HomeContainer>
+        <MenuNavBar view={menuView}>
+          <MenuLinkListing>
+            <li><MenuNavLink href="#home">Home</MenuNavLink></li>
+            <li><MenuNavLink href="#about">About</MenuNavLink></li>
+            <li><MenuNavLink href="#projects">Projects</MenuNavLink></li>
+            <li><MenuNavLink href="#contact">Contact</MenuNavLink></li>
+          <MenuCurriculumDownloadButton> Download CV </MenuCurriculumDownloadButton>
+          </MenuLinkListing>
+        </MenuNavBar>
         <Header>
           <Logo src={marconeLogo} width={59.22} height={34.78}alt='marcone logo' draggable={false}></Logo>
           <NavBar>
@@ -43,6 +56,13 @@ const Home = () => {
             </LinkListing>
           </NavBar>
           <CurriculumDownloadButton> Download CV </CurriculumDownloadButton>
+          <MenuContainer>
+            <MenuTrigger type="checkbox" id='checkbox-menu' onChange={HandleMenu}/>
+            <MenuLabel htmlFor="checkbox-menu">
+              <MenuItem/>
+              <MenuItem/>
+            </MenuLabel>
+          </MenuContainer>
         </Header>
         <MyPhoto src={myPhoto} width={1080} height={1142} alt='marcone photo' draggable={false} priority/>
         <Name>MARCONE</Name>
