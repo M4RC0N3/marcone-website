@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -14,6 +14,49 @@ import behanceLogo from 'src/assets/icons/behance.svg';
 import sendIcon from 'src/assets/icons/send.svg';
 
 const Contact = () =>{
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+    
+    const [nameValidation, setNameValidation] = useState(false);
+    const [emailValidation, setEmailValidation] = useState(false);
+    const [subjectValidation, setSubjectValidation] = useState(false);
+    const [messageValidation, setMessageValidation] = useState(false);
+    const [buttonIsDisable, setButtonIsDisable] = useState(true);
+    const handleName = ()=>{
+        let regex:any = /^[a-z ,.'-]+$/i;
+        return regex.test(name);
+    }
+
+    const handleEmail = ()=>{
+        let regex:any = /\S+@\S+\.\S+/;
+        return regex.test(email);
+    }
+
+    useEffect(()=>{
+        if(handleName() == true && name.length >=5){
+            setNameValidation(true);
+        }
+
+        if(handleEmail()){
+            setEmailValidation(true);
+        }
+
+        if(subject.length >= 2){
+            setSubjectValidation(true);
+        }
+        if(message.length >= 10){
+            setMessageValidation(true);
+        }
+
+        if(nameValidation == true && emailValidation == true && subjectValidation == true && messageValidation == true){
+            setButtonIsDisable(false);
+        }
+        else{
+            setButtonIsDisable(true);
+        }
+    })
 
     return(
         <Section id='contact'>
@@ -23,14 +66,14 @@ const Contact = () =>{
                     <Subtitle>Let's make something innovative and creative?</Subtitle>
                 </Header>
                 <Form>
-                    <Input placeholder='Name' required/>
+                    <Input placeholder='Name' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setName(event.target.value)}} required/>
 
-                    <Input placeholder='Email' required/>
+                    <Input placeholder='Email' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setEmail(event.target.value)}} required/>
 
-                    <Input placeholder='Subject' required/>
+                    <Input placeholder='Subject' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setSubject(event.target.value)}} required/>
 
-                    <Message placeholder='Message' required/>
-                    <Button>
+                    <Message placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required/>
+                    <Button disabled={buttonIsDisable}>
                         Send
                         <SendIcon src={sendIcon} width={20} height={20} alt='send icon' draggable={false}/>
                     </Button>

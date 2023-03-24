@@ -72,14 +72,14 @@ export const Button = styled.button`
     width: 135px;
     font-family: 'releway-regular', sans-serif;
     font-size: 1.5rem;
-    background-color: #6570ff;
+    background-color: ${(props)=>props.disabled ? '#b0b6ff' : '#6570ff'};
     color: #fff;
     box-sizing: border-box;
     padding: 8px;
     border: none;
     margin-top: 55px;
-    box-shadow: 0 8px 24px rgba(101, 112, 225, .24);
-    cursor: pointer;
+    box-shadow: ${(props)=>props.disabled ? 'none' : '0 8px 24px rgba(101, 112, 225, .24)'};
+    cursor: ${(props)=>props.disabled ? 'not-allowed' : 'pointer'};
     transition: .5s cubic-bezier( 0.79,0.33,0,0.93 );
     margin-left: 0px;
     display: flex;
@@ -87,10 +87,10 @@ export const Button = styled.button`
     align-items: center;
     
     &:hover{
-        margin-left: 15px;
+        margin-left: ${(props)=>props.disabled ? '0px' : '15px'};
     }
     &:hover > img{
-        margin-right: -15px;
+        margin-right: ${(props)=>props.disabled ? '0px' : '-15px'};
     }
 `;
 export const SendIcon = styled(Image)`
