@@ -99,7 +99,7 @@ const Contact = () =>{
                             </IconContainer>
                         </Link>
 
-                        <Link href='https://www.linkedin.com/feed/' target='_blank'>
+                        <Link href='https://www.linkedin.com/in/marcone-ribeiro-947184163/' target='_blank'>
                             <IconContainer>
                                 <Image src={linkedinLogo} width={20} height={18} alt='linkedin logo' draggable={false}/>
                             </IconContainer>
