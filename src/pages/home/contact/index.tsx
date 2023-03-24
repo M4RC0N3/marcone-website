@@ -38,16 +38,29 @@ const Contact = () =>{
         if(handleName() == true && name.length >=5){
             setNameValidation(true);
         }
+        else{
+            setNameValidation(false);
+        }
 
         if(handleEmail()){
             setEmailValidation(true);
+        }
+        else{
+            setEmailValidation(false);
         }
 
         if(subject.length >= 2){
             setSubjectValidation(true);
         }
+        else{
+            setSubjectValidation(false);
+        }
+
         if(message.length >= 10){
             setMessageValidation(true);
+        }
+        else{
+            setMessageValidation(false);
         }
 
         if(nameValidation == true && emailValidation == true && subjectValidation == true && messageValidation == true){
