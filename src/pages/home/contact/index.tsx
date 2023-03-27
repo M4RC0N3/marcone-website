@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,6 +14,8 @@ import linkedinLogo from 'src/assets/icons/linkedin.svg';
 import behanceLogo from 'src/assets/icons/behance.svg';
 import sendIcon from 'src/assets/icons/send.svg';
 
+
+
 const Contact = () =>{
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -24,6 +27,7 @@ const Contact = () =>{
     const [subjectValidation, setSubjectValidation] = useState(false);
     const [messageValidation, setMessageValidation] = useState(false);
     const [buttonIsDisable, setButtonIsDisable] = useState(true);
+
     const handleName = ()=>{
         let regex:any = /^[a-z ,.'-]+$/i;
         return regex.test(name);
@@ -70,7 +74,26 @@ const Contact = () =>{
             setButtonIsDisable(true);
         }
     })
-
+    const templateParams = {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
+    }
+   function sendEmail(event:any){
+        event.preventDefault();
+        emailjs.send('service_tryj8io', 'template_87n509o', templateParams, 'k8NhC-4hAtENSx6B4')
+            .then((result)=>{
+                console.log(result.text);
+                setName('');
+                setEmail('');
+                setSubject('');
+                setMessage('');
+            },
+            (error)=>{
+                console.log(error.text);
+            });
+    }
     return(
         <Section id='contact'>
             <FormContainer>
@@ -78,19 +101,19 @@ const Contact = () =>{
                     <Title>Let's talk</Title>
                     <Subtitle>Let's make something innovative and creative?</Subtitle>
                 </Header>
-                <Form>
-                    <Error isVisible={emailValidation}>*Please tell me your name</Error>
-                    <Input isCorrect={nameValidation} placeholder='Name' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setName(event.target.value)}} required/>
+                <Form onSubmit={sendEmail}>
+                    <Error isVisible={nameValidation}>*Please tell me your name</Error>
+                    <Input isCorrect={nameValidation} placeholder='Name' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setName(event.target.value)}} required value={name}/>
 
                     <Error isVisible={emailValidation}>*Enter the valid email. Ex: name@server.com</Error>
-                    <Input isCorrect={emailValidation} placeholder='Email' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setEmail(event.target.value)}} required/>
+                    <Input isCorrect={emailValidation} placeholder='Email' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setEmail(event.target.value)}} required value={email}/>
 
                     <Error isVisible={subjectValidation}>*Enter the valid subject</Error>
-                    <Input isCorrect={subjectValidation} placeholder='Subject' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setSubject(event.target.value)}} required/>
+                    <Input isCorrect={subjectValidation} placeholder='Subject' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setSubject(event.target.value)}} required value={subject}/>
 
                     <Error isVisible={messageValidation}>*Your message must be more than 10 characters</Error>
-                    <Message isCorrect={messageValidation} placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required/>
-                    <Button disabled={buttonIsDisable}>
+                    <Message isCorrect={messageValidation} placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required value={message}/>
+                    <Button type='submit' disabled={buttonIsDisable}>
                         Send
                         <SendIcon src={sendIcon} width={20} height={20} alt='send icon' draggable={false}/>
                     </Button>
