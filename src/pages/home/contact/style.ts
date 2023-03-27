@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+interface Type{
+    isVisible: boolean;
+}
+interface InputType{
+    isCorrect: boolean;
+}
 export const Section = styled.section`
     width: 100vw;
     background-color: #fff;
@@ -34,7 +40,7 @@ export const Form = styled.form`
     margin-top: 50px;
     justify-content: space-between;
 `;
-export const Input = styled.input`
+export const Input = styled.input<InputType>`
     font-family: 'releway-regular', sans-serif;
     font-size: 1.1rem;
     border: none;
@@ -51,8 +57,9 @@ export const Input = styled.input`
     &::placeholder{
         margin-bottom: 10px;
     }
+    border-bottom-color: ${(props)=>props.isCorrect == false ? '#ee5253' : props.isCorrect == true ? '#1dd1a1' : '#000'};
 `;
-export const Message = styled.textarea`
+export const Message = styled.textarea<InputType>`
     font-family: 'releway-regular', sans-serif;
     max-width: 100%;
     max-height: 210px;
@@ -67,6 +74,7 @@ export const Message = styled.textarea`
     &:focus{
         border-bottom-color: #966aff;
     }
+    border-bottom-color: ${(props)=>props.isCorrect == false ? '#ee5253' : props.isCorrect == true ? '#1dd1a1' : '#000'}
 `;
 export const Button = styled.button`
     width: 135px;
@@ -143,3 +151,10 @@ export const IconContainer = styled.div`
         background-color: #6570ff;
     }
 `;
+
+export const Error = styled.p<Type>`
+    font-family: 'raleway-bold', sans-serif;
+    color: #ee5253;
+    margin-bottom: 10px;
+    display: ${(props)=>props.isVisible == true ? 'none' : 'block'};
+`

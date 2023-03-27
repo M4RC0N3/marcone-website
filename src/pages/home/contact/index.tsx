@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { Section, FormContainer, Header, Title, Subtitle, Form, Input, Message, Button,
     InfoContactContainer, InfoContact, CityName, Email, Phone, SocialMediaContainer, 
-    IconContainer, SendIcon
+    IconContainer, SendIcon, Error
 } from './style';
 
 import gitubLogo from 'src/assets/icons/github.svg';
@@ -79,13 +79,17 @@ const Contact = () =>{
                     <Subtitle>Let's make something innovative and creative?</Subtitle>
                 </Header>
                 <Form>
-                    <Input placeholder='Name' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setName(event.target.value)}} required/>
+                    <Error isVisible={emailValidation}>*Please tell me your name</Error>
+                    <Input isCorrect={nameValidation} placeholder='Name' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setName(event.target.value)}} required/>
 
-                    <Input placeholder='Email' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setEmail(event.target.value)}} required/>
+                    <Error isVisible={emailValidation}>*Enter the valid email. Ex: name@server.com</Error>
+                    <Input isCorrect={emailValidation} placeholder='Email' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setEmail(event.target.value)}} required/>
 
-                    <Input placeholder='Subject' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setSubject(event.target.value)}} required/>
+                    <Error isVisible={subjectValidation}>*Enter the valid subject</Error>
+                    <Input isCorrect={subjectValidation} placeholder='Subject' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setSubject(event.target.value)}} required/>
 
-                    <Message placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required/>
+                    <Error isVisible={messageValidation}>*Your message must be more than 10 characters</Error>
+                    <Message isCorrect={messageValidation} placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required/>
                     <Button disabled={buttonIsDisable}>
                         Send
                         <SendIcon src={sendIcon} width={20} height={20} alt='send icon' draggable={false}/>
