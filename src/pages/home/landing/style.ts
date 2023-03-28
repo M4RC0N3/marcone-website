@@ -40,6 +40,11 @@ export const Header = styled.header`
     @media (max-width: 1024px){
         padding: 20px 30px;
     }
+    @media (max-width: 765px){
+        #curriculum-download-header{
+            display: none;
+        }
+    }
 `;
 
 export const MenuContainer = styled.div`
@@ -150,9 +155,6 @@ export const CurriculumDownloadButton = styled.button`
     &:hover{
         background-color: #fff;
         color: #000;
-    }
-    @media (max-width: 765px){
-        display: none;
     }
 `;
 

@@ -47,7 +47,9 @@ const Home = () => {
             <li><MenuNavLink href="#about">About</MenuNavLink></li>
             <li><MenuNavLink href="#projects">Projects</MenuNavLink></li>
             <li><MenuNavLink href="#contact">Contact</MenuNavLink></li>
-          <MenuCurriculumDownloadButton> Download CV </MenuCurriculumDownloadButton>
+            <Link href='https://drive.google.com/file/d/1QRxpVlK7dyXf4xRNHcO1Z4HrB6NmQvUP/view?usp=sharing' target='_blank'>
+              <CurriculumDownloadButton> Download CV </CurriculumDownloadButton>
+            </Link>
           </MenuLinkListing>
         </MenuNavBar>
         <Header>
@@ -60,7 +62,9 @@ const Home = () => {
               <li><NavLink href="#contact">Contact</NavLink></li>
             </LinkListing>
           </NavBar>
-          <CurriculumDownloadButton> Download CV </CurriculumDownloadButton>
+          <Link href='https://drive.google.com/file/d/1QRxpVlK7dyXf4xRNHcO1Z4HrB6NmQvUP/view?usp=sharing' target='_blank'>
+            <CurriculumDownloadButton id='curriculum-download-header'> Download CV </CurriculumDownloadButton>
+          </Link>
           <MenuContainer>
             <MenuTrigger type="checkbox" id='checkbox-menu' onChange={HandleMenu}/>
             <MenuLabel htmlFor="checkbox-menu">
