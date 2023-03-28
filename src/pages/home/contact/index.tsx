@@ -101,7 +101,7 @@ const Contact = () =>{
 
             setTimeout(()=>{
                 setCardIsVisible(false);
-            }, 2500);
+            }, 3000);
         },
         (error)=>{
             console.log(error.text);
