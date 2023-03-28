@@ -14,7 +14,7 @@ import linkedinLogo from 'src/assets/icons/linkedin.svg';
 import behanceLogo from 'src/assets/icons/behance.svg';
 import sendIcon from 'src/assets/icons/send.svg';
 
-
+import Sent from 'src/components/sent';
 
 const Contact = () =>{
     const [name, setName] = useState('');
@@ -28,6 +28,9 @@ const Contact = () =>{
     const [messageValidation, setMessageValidation] = useState(false);
     const [buttonIsDisable, setButtonIsDisable] = useState(true);
 
+    const [cardIsVisible, setCardIsVisible] = useState(false);
+
+
     const handleName = ()=>{
         let regex:any = /^[a-z ,.'-]+$/i;
         return regex.test(name);
@@ -39,7 +42,7 @@ const Contact = () =>{
     }
 
     useEffect(()=>{
-        if(handleName() == true && name.length >=5){
+        if(handleName() == true && name.length >=4){
             setNameValidation(true);
         }
         else{
@@ -87,72 +90,80 @@ const Contact = () =>{
         const selectIcon:any = document.getElementById('send');
         selectIcon.classList.add('animate');
 
-        emailjs.send('service_tryj8io', 'template_87n509o', templateParams, 'k8NhC-4hAtENSx6B4').then((result)=>{
-            console.log(result.text);
+        emailjs.send('service_tryj8io', 'template_87n509o', templateParams, 'k8NhC-4hAtENSx6B4')
+        .then((result)=>{
             setName('');
             setEmail('');
             setSubject('');
             setMessage('');
             selectIcon.classList.remove('animate');
+            setCardIsVisible(true);
+
+            setTimeout(()=>{
+                setCardIsVisible(false);
+            }, 2500);
         },
         (error)=>{
             console.log(error.text);
         });
     }
     return(
-        <Section id='contact'>
-            <FormContainer>
-                <Header>
-                    <Title>Let's talk</Title>
-                    <Subtitle>Let's make something innovative and creative?</Subtitle>
-                </Header>
-                <Form onSubmit={sendEmail}>
-                    <Error isVisible={nameValidation}>*Please tell me your name</Error>
-                    <Input isCorrect={nameValidation} placeholder='Name' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setName(event.target.value)}} required value={name}/>
+        <>
+            {cardIsVisible ? <Sent/> : <></>}
+            <Section id='contact'>
+                <FormContainer>
+                    <Header>
+                        <Title>Let's talk</Title>
+                        <Subtitle>Let's make something innovative and creative?</Subtitle>
+                    </Header>
+                    <Form onSubmit={sendEmail}>
+                        <Error isVisible={nameValidation}>*Please tell me your name</Error>
+                        <Input isCorrect={nameValidation} placeholder='Name' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setName(event.target.value)}} required value={name}/>
 
-                    <Error isVisible={emailValidation}>*Enter the valid email. Ex: name@server.com</Error>
-                    <Input isCorrect={emailValidation} placeholder='Email' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setEmail(event.target.value)}} required value={email}/>
+                        <Error isVisible={emailValidation}>*Enter the valid email. Ex: name@server.com</Error>
+                        <Input isCorrect={emailValidation} placeholder='Email' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setEmail(event.target.value)}} required value={email}/>
 
-                    <Error isVisible={subjectValidation}>*Enter the valid subject</Error>
-                    <Input isCorrect={subjectValidation} placeholder='Subject' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setSubject(event.target.value)}} required value={subject}/>
+                        <Error isVisible={subjectValidation}>*Enter the valid subject</Error>
+                        <Input isCorrect={subjectValidation} placeholder='Subject' onChange={(event:React.ChangeEvent<HTMLInputElement>)=>{setSubject(event.target.value)}} required value={subject}/>
 
-                    <Error isVisible={messageValidation}>*Your message must be more than 10 characters</Error>
-                    <Message isCorrect={messageValidation} placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required value={message}/>
-                    <Button type='submit' disabled={false}>
-                        Send
-                        <SendIcon id='send' className='' src={sendIcon} width={20} height={20} alt='send icon' draggable={false} />
-                    </Button>
-                </Form>
-            </FormContainer>
-            
-            <InfoContactContainer>
-                <InfoContact>
-                    <CityName>Lauro de Freitas, BA - Br</CityName>
-                    <Email>marconeribeiro22@gmail.com</Email>
-                    <Phone>+55 71 98709-6256</Phone>
-                    
-                    <SocialMediaContainer>
-                        <Link href='https://github.com/M4RC0N3' target='_blank'>
-                            <IconContainer>
-                                <Image src={gitubLogo} width={20} height={20} alt='github logo' draggable={false}/>
-                            </IconContainer>
-                        </Link>
+                        <Error isVisible={messageValidation}>*Your message must be more than 10 characters</Error>
+                        <Message isCorrect={messageValidation} placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required value={message}/>
+                        <Button type='submit' disabled={buttonIsDisable}>
+                            Send
+                            <SendIcon id='send' className='' src={sendIcon} width={20} height={20} alt='send icon' draggable={false} />
+                        </Button>
+                    </Form>
+                </FormContainer>
+                
+                <InfoContactContainer>
+                    <InfoContact>
+                        <CityName>Lauro de Freitas, BA - Br</CityName>
+                        <Email>marconeribeiro22@gmail.com</Email>
+                        <Phone>+55 71 98709-6256</Phone>
 
-                        <Link href='https://www.behance.net/marconeribeiro1' target='_blank'>
-                            <IconContainer>
-                                <Image src={behanceLogo} width={20} height={13} alt='behance logo' draggable={false}/>
-                            </IconContainer>
-                        </Link>
+                        <SocialMediaContainer>
+                            <Link href='https://github.com/M4RC0N3' target='_blank'>
+                                <IconContainer>
+                                    <Image src={gitubLogo} width={20} height={20} alt='github logo' draggable={false}/>
+                                </IconContainer>
+                            </Link>
 
-                        <Link href='https://www.linkedin.com/in/marcone-ribeiro-947184163/' target='_blank'>
-                            <IconContainer>
-                                <Image src={linkedinLogo} width={20} height={18} alt='linkedin logo' draggable={false}/>
-                            </IconContainer>
-                        </Link>
-                    </SocialMediaContainer>
-                </InfoContact>
-            </InfoContactContainer>
-        </Section>
+                            <Link href='https://www.behance.net/marconeribeiro1' target='_blank'>
+                                <IconContainer>
+                                    <Image src={behanceLogo} width={20} height={13} alt='behance logo' draggable={false}/>
+                                </IconContainer>
+                            </Link>
+
+                            <Link href='https://www.linkedin.com/in/marcone-ribeiro-947184163/' target='_blank'>
+                                <IconContainer>
+                                    <Image src={linkedinLogo} width={20} height={18} alt='linkedin logo' draggable={false}/>
+                                </IconContainer>
+                            </Link>
+                        </SocialMediaContainer>
+                    </InfoContact>
+                </InfoContactContainer>
+            </Section>
+        </>
     );
 }
 
