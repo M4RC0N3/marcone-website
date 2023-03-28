@@ -111,8 +111,8 @@ const Contact = () =>{
             <Section id='contact'>
                 <FormContainer>
                     <Header>
-                        <Title>Let's talk</Title>
-                        <Subtitle>Let's make something innovative and creative?</Subtitle>
+                        <Title>Let&apos;s talk</Title>
+                        <Subtitle>Let&apos;s make something innovative and creative?</Subtitle>
                     </Header>
                     <Form onSubmit={sendEmail}>
                         <Error isVisible={nameValidation}>*Please tell me your name</Error>
