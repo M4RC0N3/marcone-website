@@ -75,7 +75,7 @@ const Contact = () =>{
             setButtonIsDisable(true);
         }
 
-    },[ name.length, subject.length, message.length, nameValidation, emailValidation, subjectValidation, messageValidation]);
+    },[name, email, subject.length, message.length, nameValidation, emailValidation, subjectValidation, messageValidation]);
     const templateParams = {
         name: name,
         email: email,
