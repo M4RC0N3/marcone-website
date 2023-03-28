@@ -1,10 +1,10 @@
 
 //Sections
-import Home from './home/landing/index';
-import About from './home/about/index';
-import Tolls from './home/tools/index';
-import Projects from './home/projects/indext';
-import Contact from './home/contact/index';
+import Home from 'src/home/landing/index';
+import About from 'src/home/about/index';
+import Tolls from 'src/home/tools/index';
+import Projects from 'src/home/projects/indext';
+import Contact from 'src/home/contact/index';
 
 import Head from 'next/head';
 
