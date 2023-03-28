@@ -30,18 +30,16 @@ const Contact = () =>{
 
     const [cardIsVisible, setCardIsVisible] = useState(false);
 
-
-    const handleName = ()=>{
-        let regex:any = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
-        return regex.test(name);
-    }
-
-    const handleEmail = ()=>{
-        let regex:any = /\S+@\S+\.\S+/;
-        return regex.test(email);
-    }
-
     useEffect(()=>{
+        const handleName = ()=>{
+            let regex:any = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+            return regex.test(name);
+        }
+
+        const handleEmail = ()=>{
+            let regex:any = /\S+@\S+\.\S+/;
+            return regex.test(email);
+        }
         if(handleName() == true && name.length >=4){
             setNameValidation(true);
         }
@@ -77,7 +75,7 @@ const Contact = () =>{
             setButtonIsDisable(true);
         }
 
-    },[handleName, name.length, handleEmail, subject.length, message.length, nameValidation, emailValidation, subjectValidation, messageValidation]);
+    },[ name.length, subject.length, message.length, nameValidation, emailValidation, subjectValidation, messageValidation]);
     const templateParams = {
         name: name,
         email: email,

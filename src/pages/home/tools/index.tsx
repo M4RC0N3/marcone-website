@@ -33,7 +33,7 @@ const About = () =>{
                 <AboutDesignWorkContainer>
                     <Text id='design'>
                         <Title>UI/UX Design</Title>
-                        <Content>As a UI/UX designer, I am very demanding when it comes to accuracy and practicality. My goal is always to reach the desired audience for a particular function, whether it's a specific group or a more general one. To achieve this accuracy, I conduct extensive research and study cases to ensure that I am on the right track. To compose my work, I use some of the tools listed below:</Content>
+                        <Content>As a UI/UX designer, I am very demanding when it comes to accuracy and practicality. My goal is always to reach the desired audience for a particular function, whether it&apos;s a specific group or a more general one. To achieve this accuracy, I conduct extensive research and study cases to ensure that I am on the right track. To compose my work, I use some of the tools listed below:</Content>
                     </Text>
                     <ImageContainer>
                         <Image src={brushs} width={833} height={833} alt='github logo' draggable={false}></Image>
