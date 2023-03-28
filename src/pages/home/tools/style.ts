@@ -169,7 +169,9 @@ export const Tool = styled.div`
     width: 65px;
     height: 65px;
     background-color: ${props=>props.id == 'design' ? '#000000' : '#fff'};
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 710px) {
         width: 55px;
         height: 55px;
