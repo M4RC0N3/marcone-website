@@ -32,7 +32,7 @@ const Contact = () =>{
 
 
     const handleName = ()=>{
-        let regex:any = /^[a-z ,.'-]+$/i;
+        let regex:any = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
         return regex.test(name);
     }
 
@@ -77,7 +77,7 @@ const Contact = () =>{
             setButtonIsDisable(true);
         }
 
-    })
+    },[handleName, name.length, handleEmail, subject.length, message.length, nameValidation, emailValidation, subjectValidation, messageValidation]);
     const templateParams = {
         name: name,
         email: email,
