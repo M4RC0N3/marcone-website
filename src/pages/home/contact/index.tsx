@@ -73,6 +73,7 @@ const Contact = () =>{
         else{
             setButtonIsDisable(true);
         }
+
     })
     const templateParams = {
         name: name,
@@ -80,19 +81,23 @@ const Contact = () =>{
         subject: subject,
         message: message
     }
-   function sendEmail(event:any){
+    function sendEmail(event:any){
         event.preventDefault();
-        emailjs.send('service_tryj8io', 'template_87n509o', templateParams, 'k8NhC-4hAtENSx6B4')
-            .then((result)=>{
-                console.log(result.text);
-                setName('');
-                setEmail('');
-                setSubject('');
-                setMessage('');
-            },
-            (error)=>{
-                console.log(error.text);
-            });
+
+        const selectIcon:any = document.getElementById('send');
+        selectIcon.classList.add('animate');
+
+        emailjs.send('service_tryj8io', 'template_87n509o', templateParams, 'k8NhC-4hAtENSx6B4').then((result)=>{
+            console.log(result.text);
+            setName('');
+            setEmail('');
+            setSubject('');
+            setMessage('');
+            selectIcon.classList.remove('animate');
+        },
+        (error)=>{
+            console.log(error.text);
+        });
     }
     return(
         <Section id='contact'>
@@ -113,9 +118,9 @@ const Contact = () =>{
 
                     <Error isVisible={messageValidation}>*Your message must be more than 10 characters</Error>
                     <Message isCorrect={messageValidation} placeholder='Message' onChange={(event:any)=>{setMessage(event.target.value)}} required value={message}/>
-                    <Button type='submit' disabled={buttonIsDisable}>
+                    <Button type='submit' disabled={false}>
                         Send
-                        <SendIcon src={sendIcon} width={20} height={20} alt='send icon' draggable={false}/>
+                        <SendIcon id='send' className='' src={sendIcon} width={20} height={20} alt='send icon' draggable={false} />
                     </Button>
                 </Form>
             </FormContainer>

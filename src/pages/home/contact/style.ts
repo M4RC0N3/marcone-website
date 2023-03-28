@@ -6,6 +6,7 @@ interface Type{
 interface InputType{
     isCorrect: boolean;
 }
+
 export const Section = styled.section`
     width: 100vw;
     background-color: #fff;
@@ -76,6 +77,7 @@ export const Message = styled.textarea<InputType>`
     }
     border-bottom-color: ${(props)=>props.isCorrect == false ? '#ee5253' : props.isCorrect == true ? '#1dd1a1' : '#000'}
 `;
+
 export const Button = styled.button`
     width: 135px;
     font-family: 'releway-regular', sans-serif;
@@ -100,10 +102,30 @@ export const Button = styled.button`
     &:hover > img{
         margin-right: ${(props)=>props.disabled ? '0px' : '-15px'};
     }
+
+    @keyframes send {
+        0%{
+            margin-right: 0;
+        }
+        50%{
+            margin-right: 40px;
+        }
+        100%{
+            margin-right: -370px;
+        }
+    }
+    &>.animate  {
+        animation: send 1s cubic-bezier( 0.79,0.33,0,0.93 ) forwards;
+    }
 `;
+
+
+
 export const SendIcon = styled(Image)`
     transition: .5s cubic-bezier( 0.79,0.33,0,0.93 );
 `;
+
+
 export const InfoContactContainer = styled.div`
     display: flex;
     justify-content: end;
@@ -157,4 +179,4 @@ export const Error = styled.p<Type>`
     color: #ee5253;
     margin-bottom: 10px;
     display: ${(props)=>props.isVisible == true ? 'none' : 'block'};
-`
+`;
