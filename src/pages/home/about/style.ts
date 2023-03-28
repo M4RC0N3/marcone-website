@@ -40,7 +40,7 @@ export const Title = styled.h2`
 
 export const Content = styled.p`
     font-family: 'raleway-medium', sans-serif;
-    line-height: 24px;
+    line-height: 28px;
     font-size: 1rem;
     text-align: justify;
 `

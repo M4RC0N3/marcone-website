@@ -13,7 +13,7 @@ const About = () =>{
         <Section id='about'>
             <TextSide>
                 <Title>About</Title>
-                <Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non orci ornare, auctor mauris quis, ultricies lacus. Vestibulum rutrum sed turpis id mollis. Nulla pulvinar elit eu sollicitudin eleifend. Morbi pulvinar fringilla ipsum, et rhoncus velit. Donec laoreet sem suscipit felis ullamcorper, id ultrices nisi facilisis. Integer id egestas enim. Curabitur mi elit, iaculis eget nunc vel, feugiat varius risus. Integer hendrerit ultrices congue.</Content>
+                <Content>I am a React Js and React Native developer, focused on making the user experience amazing. I have been programming for 5 years and working with frontend development for 3 years, and since then I have been specializing more and more in what I do.To achieve my goal of making the development and user experience amazing and scalable, I take advantage of the great possibility that frontend offers of mixing logic and creativity, combining these two points I can give assertiveness to the projects I work on.</Content>
             </TextSide>
             <PhotoSide>
                 <LogoVariation id='prisma' src={prismaLogo} width={78.65} height={50.3} alt='prisma logo variaton' draggable={false}/>

@@ -98,7 +98,7 @@ export const AboutDevWorkContainer = styled(AboutWorkContainer)`
 `;
 
 export const Text = styled.div`
-    max-width: 430px;
+    max-width: 490px;
     line-height: 24px;
     font-size: 1rem;
     text-align: ${props=>props.id == 'design' ? 'end' : 'start'};

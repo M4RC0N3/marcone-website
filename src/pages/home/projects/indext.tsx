@@ -34,7 +34,7 @@ const Projects = () => {
                 <ProjectAbout>
                     <ProjectType>Landig Page</ProjectType>
                     <ProjectTitle>My Project</ProjectTitle>
-                    <ProjectDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ProjectDescription>
+                    <ProjectDescription>I was amazed by the beauty of Tech Owl and its animations.</ProjectDescription>
                 </ProjectAbout>
                 <Link href={`https://m4rc0n3.github.io/coruja/`} target='_blank' style={{textDecoration: 'none'}}>
                     <Button>
@@ -65,7 +65,7 @@ const Projects = () => {
                 <ProjectAbout>
                     <ProjectType>Web App</ProjectType>
                     <ProjectTitle>Payment screen</ProjectTitle>
-                    <ProjectDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ProjectDescription>
+                    <ProjectDescription>I made a payment knowing exactly where each content of the card is located.</ProjectDescription>
                 </ProjectAbout>
                 <Link href={`https://m4rc0n3.github.io/payment-screen/`} target='_blank' style={{textDecoration: 'none'}}>
                     <Button>
@@ -96,7 +96,7 @@ const Projects = () => {
                 <ProjectAbout>
                     <ProjectType>Web Design</ProjectType>
                     <ProjectTitle>Vigas imóveis</ProjectTitle>
-                    <ProjectDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ProjectDescription>
+                    <ProjectDescription>The minimalist design landing page</ProjectDescription>
                 </ProjectAbout>
                 <Link href={`https://www.behance.net/gallery/161792265/Vigas-landing-page`} target='_blank' style={{textDecoration: 'none'}}>
                     <Button>
@@ -127,7 +127,7 @@ const Projects = () => {
                 <ProjectAbout>
                     <ProjectType>Landing Page</ProjectType>
                     <ProjectTitle>Digipeks army</ProjectTitle>
-                    <ProjectDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ProjectDescription>
+                    <ProjectDescription>Learn how to buy Digipeks Army NFTs.</ProjectDescription>
                 </ProjectAbout>
                 <Link href={`https://m4rc0n3.github.io/digipeks-army/`} target='_blank' style={{textDecoration: 'none'}}>
                     <Button>
