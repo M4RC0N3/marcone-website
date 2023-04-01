@@ -122,37 +122,6 @@ const Projects = () => {
                 </StackContainer>
             </ProjectPreview>
         </ProjectContainer>
-        <ProjectContainer>
-            <ProjectActionContainer>
-                <ProjectAbout>
-                    <ProjectType>Landing Page</ProjectType>
-                    <ProjectTitle>Digipeks army</ProjectTitle>
-                    <ProjectDescription>Learn how to buy Digipeks Army NFTs.</ProjectDescription>
-                </ProjectAbout>
-                <Link href={`https://m4rc0n3.github.io/digipeks-army/`} target='_blank' style={{textDecoration: 'none'}}>
-                    <Button>
-                        <NameButton>View project</NameButton>
-                        <Arrow src={arrow} width={81} height={9} alt='view project' draggable={false}></Arrow>
-                    </Button>
-                </Link>
-            </ProjectActionContainer>
-            <ProjectPreview>
-                <ImageContainer>
-                    <Image src={digipeksBanner} width={683} height={370} style={{width: '100%', height: 'auto'}} alt='landing page coruja banner' draggable={false}></Image>
-                </ImageContainer>
-                <StackContainer>
-                    <Stack style={{backgroundColor: '#0093FF'}}>
-                        <Image src={react} width={56} height={49} alt='react icon' draggable={false}></Image>
-                    </Stack>
-                    <Stack style={{backgroundColor: '#FF519C'}}>
-                        <Image src={sass} width={53} height={40} alt='sass icon' draggable={false}></Image>
-                    </Stack>
-                    <Stack style={{backgroundColor: '#FFE95A'}}>
-                        <Image src={javascript} width={40} height={29} alt='javascript icon' draggable={false}></Image>
-                    </Stack>
-                </StackContainer>
-            </ProjectPreview>
-        </ProjectContainer>
     </Section>
   );
 }
